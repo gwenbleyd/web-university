@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block style %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+{% endblock %}
+
+{% block main %}
+  <div class="profile">
+    <div class="leftcolumn">
+      <div class="card">
+        <img class="profile-img" src="https://cdn.ananasposter.ru/image/cachewebp/catalog/poster/mult/90/3824-1000x830.webp">
+      </div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        Имя: {{ surname }} {{ name }}
+      </div>
+      <div class="card">
+        Почта: {{ email }}
+      </div>
+      <div class="card">
+        Дата рождения:
+        <input type="date" id="start" name="trip-start" value="2018-07-22" max="2018-12-31">
+      </div>
+      <div class="card">
+        О себе:
+        <p>Ничего</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}

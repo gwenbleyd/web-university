@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+        <title>Язык Python</title>
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+          body {
+            margin: 0;
+            background-color: #f1f1f1;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+        </style>
+        {% block style %} {% endblock %}
+    </head>
+    <body>
+        {% block flash %}{% endblock %}
+        <header class="header">
+            <div class="navigation">
+                <a href="/home">Домой</a>
+                <a href="/news">Новости</a>
+                <a href="/about">О нас</a>
+                <a href="/contact">Контакты</a>
+            </div>
+            <div class="logo-block">
+                <span>Язык Python</span>
+            </div>
+            <div class="auth-block">
+                <div class="register-block">
+                    <span onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Регистрация</span>
+                        <div id="id01" class="register">
+                            <form action="{{ url_for('register_post') }}" class="register-form" method="post">
+                            <div class="container">
+                                <h1>Регистрация</h1>
+                                <hr>
+                                <input type="text" placeholder="Имя" name="name" required>
+                                <input type="text" placeholder="Фамилия" name="surname" required>
+                                <input type="email" placeholder="Почта" name="email" required>
+                                <input type="password" placeholder="Пароль" name="password" minlength="5" required
+                                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                       title = "Пароль не может быть короче восьми символов и должен содержать хотя
+                                       бы одну цифру, одну маленькую и одну большую латинскую букву.">
+                                <input type="password" placeholder="Повторите пароль" name="password-repeat" required>
+                                <label> <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомни меня </label>
+
+                                <div class="clearfix">
+                                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Закрыть</button>
+                                  <button type="submit" class="signupbtn">Регистрация</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="login-block">
+                    <span onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Вход</span>
+                    <div id="id02" class="login">
+                        <form action="{{ url_for('login') }}" class="login-form" method="post">
+                            <div class="container">
+                                <input type="email" placeholder="Почта" name="email" required>
+                                <input type="password" placeholder="Пароль" name="password" required>
+                                <div class="clearfix">
+                                    <button type="submit" class="signupbtn">Войти</button>
+                                    <a href="/password/reset">Не помню пароль</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="all-body">
+            <div class="column left">
+                {% block left %}{% endblock %}
+            </div>
+            <div class="column main">
+                {% block main %}{% endblock %}
+            </div>
+            <div class="column right">
+                {% block right %}{% endblock %}
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="author">
+                <p>© 2021 Крючков Андрей </p>
+            </div>
+        </footer>
+    </body>
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    {% block script %}{% endblock %}
+</html>

@@ -1,0 +1,122 @@
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    z-index: 100;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+/* Блок текста*/
+.main-text p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Таблица */
+.table {
+    width: 100%;
+}
+
+.scroll-table {
+    overflow: scroll;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.scroll-table table {
+    width:100%;
+    border-collapse: collapse;
+}
+
+.scroll-table td, th {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.scroll-table th {
+    background-color: #333;
+    color: white;
+}
+
+.scroll-table tr:nth-child(even) {
+    background-color: rgb(220, 220, 220)
+}
+
+/* Галерея */
+.slides {
+    display: none;
+}
+
+.slides img {
+    vertical-align: middle;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.count {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/* Опрос */
+#selang {
+    color: white;
+    background-color: #333;
+}
